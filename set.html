@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMMERFEST 2025 | Festival | Phake, Mpumalanga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Color Palette */
+        :root {
+            --yellow: #FFD500;
+            --black: #1A1A1A;
+            --white: #FFFFFF;
+            --cyan: #00F6FF;
+            --gray: #2A2A2A;
+            --light-gray: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--yellow);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--black);
+        }
+
+        .logo span {
+            color: var(--yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--black);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--cyan);
+            font-weight: 600;
+            margin-bottom: 2.8rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            margin: 3rem auto;
+            max-width: 250px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--yellow);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            opacity: 0.9;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--yellow);
+            color: var(--black);
+            padding: 16px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 213, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--black);
+            color: var(--yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(26, 26, 26, 0.3);
+        }
+
+        .cta-button i {
+            color: var(--black);
+        }
+
+        .cta-button:hover i {
+            color: var(--yellow);
+        }
+
+        /* Host Section */
+        .host-section {
+            padding: 80px 5%;
+            background: var(--light-gray);
+            text-align: center;
+        }
+
+        .host-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .host-profile {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .host-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--yellow);
+            box-shadow: 0 15px 30px rgba(255, 213, 0, 0.2);
+        }
+
+        .host-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .host-info {
+            text-align: center;
+        }
+
+        .host-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .host-title {
+            font-size: 1.2rem;
+            color: var(--yellow);
+            font-weight: 600;
+        }
+
+        /* Artists Carousel */
+        .artists-section {
+            padding: 100px 5%;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 30px 0;
+        }
+
+        .artists-track {
+            display: flex;
+            gap: 25px;
+            animation: scrollDesktop 60s linear infinite;
+        }
+
+        .artist-card {
+            flex: 0 0 280px;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .artist-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+        }
+
+        .artist-image {
+            width: 100%;
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+            background: var(--light-gray);
+        }
+
+        .artist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .artist-card:hover .artist-image img {
+            transform: scale(1.1);
+        }
+
+        .artist-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .artist-card:hover .artist-image::before {
+            left: 100%;
+        }
+
+        .artist-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .artist-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        /* Artist Names List */
+        .artist-names-list {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .artist-names-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .artist-name-tag {
+            background: var(--light-gray);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--gray);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .artist-name-tag:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        /* Contacts Section */
+        .contacts-section {
+            padding: 80px 5%;
+            background: var(--light-gray);
+            text-align: center;
+        }
+
+        .contacts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 2px solid var(--light-gray);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--yellow);
+            transform: translateY(-5px);
+        }
+
+        .contact-card h3 {
+            color: var(--black);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-card h3 i {
+            color: var(--yellow);
+        }
+
+        .contact-number {
+            font-size: 1.5rem;
+            color: var(--black);
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* Announcement & Poster Section */
+        .extra-info-section {
+            padding: 100px 5%;
+            background: var(--white);
+        }
+
+        .extra-info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .announcement-board {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 3px solid var(--yellow);
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .announcement-board h2 {
+            font-size: 2.5rem;
+            color: var(--black);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .announcement-board h2 i {
+            color: var(--yellow);
+        }
+
+        .announcement-content {
+            font-size: 1.3rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .poster-container {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .poster-frame {
+            display: inline-block;
+            padding: 25px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border: 5px solid var(--yellow);
+        }
+
+        .poster-image {
+            width: 400px;
+            height: 500px;
+            background: var(--light-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .poster-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Image & Text Sections */
+        .content-section {
+            padding: 100px 5%;
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content-wrapper.reverse {
+            direction: rtl;
+        }
+
+        .content-wrapper.reverse > * {
+            direction: ltr;
+        }
+
+        .section-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            background: var(--light-gray);
+        }
+
+        .section-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .section-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .section-content {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .section-title span {
+            color: var(--yellow);
+        }
+
+        .section-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            font-size: 1rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .features-list li i {
+            color: var(--black);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            padding: 100px 5%;
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--black);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 80px;
+            position: relative;
+            width: 45%;
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--yellow);
+            transform: translateY(-5px);
+        }
+
+        .timeline-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--black);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: var(--yellow);
+            border-radius: 50%;
+            top: 40px;
+            right: -47px;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(255, 213, 0, 0.5);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -47px;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 100px 5%;
+            background: var(--white);
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
+
+        .map-wrapper {
+            width: 100%;
+            height: 500px;
+            position: relative;
+        }
+
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            max-width: 400px;
+        }
+
+        .map-overlay h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .map-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            color: var(--gray);
+        }
+
+        .map-info i {
+            color: var(--yellow);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 5%;
+            background: var(--light-gray);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--cyan);
+            box-shadow: 0 20px 45px rgba(0, 246, 255, 0.1);
+        }
+
+        .faq-question {
+            padding: 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+        }
+
+        .faq-question h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .faq-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--black);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+        }
+
+        .faq-arrow {
+            color: var(--gray);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .faq-answer.active {
+            padding: 0 30px 30px;
+            max-height: 500px;
+        }
+
+        .faq-question.active .faq-arrow {
+            transform: rotate(180deg);
+            color: var(--yellow);
+        }
+
+        /* Tickets Section */
+        .tickets-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--yellow), var(--cyan));
+        }
+
+        .tickets-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 5% 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            grid-column: 1 / span 1;
+        }
+
+        .footer-brand h3 {
+            color: var(--yellow);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.8;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--gray);
+            border-radius: 12px;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .social-links a:last-child {
+            margin-right: 0;
+        }
+
+        .social-links a:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-links h4 {
+            color: var(--cyan);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 12px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--yellow);
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollDesktop {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-280px * 24 - 25px * 23));
+            }
+        }
+
+        @keyframes scrollTablet {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-250px * 24 - 25px * 23));
+            }
+        }
+
+        @keyframes scrollMobileLarge {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-220px * 24 - 25px * 23));
+            }
+        }
+
+        @keyframes scrollMobile {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-180px * 24 - 25px * 23));
+            }
+        }
+
+        @keyframes scrollMobileSmall {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-160px * 24 - 25px * 23));
+            }
+        }
+
+        /* ================= RESPONSIVE DESIGN ================= */
+
+        /* Large tablets and small laptops */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .content-wrapper {
+                gap: 40px;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .map-overlay {
+                max-width: 350px;
+                padding: 25px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-brand {
+                grid-column: 1 / span 3;
+            }
+        }
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .content-wrapper.reverse {
+                direction: ltr;
+            }
+            
+            .section-content {
+                padding: 20px 0;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .features-list {
+                text-align: left;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 80px);
+                margin-left: 80px !important;
+                margin-right: 0 !important;
+            }
+            
+            .timeline-dot {
+                left: -47px !important;
+                right: auto !important;
+            }
+            
+            .map-overlay {
+                position: relative;
+                bottom: 0;
+                left: 0;
+                max-width: 100%;
+                margin-top: -50px;
+                border-radius: 0 0 25px 25px;
+            }
+            
+            .map-wrapper {
+                height: 400px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-brand {
+                grid-column: 1 / span 2;
+            }
+            
+            /* Fix artist carousel for tablet */
+            .artist-card {
+                flex: 0 0 250px;
+            }
+            
+            .artists-track {
+                animation-name: scrollTablet;
+            }
+        }
+
+        /* Large Mobile */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 30px 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links a {
+                padding: 15px 0;
+                font-size: 1.1rem;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                min-height: 90vh;
+                padding: 0 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            .stat-number {
+                font-size: 3.5rem;
+            }
+            
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .host-circle {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .host-name {
+                font-size: 1.8rem;
+            }
+            
+            .announcement-board {
+                padding: 30px 20px;
+            }
+            
+            .announcement-board h2 {
+                font-size: 2rem;
+            }
+            
+            .announcement-content {
+                font-size: 1.1rem;
+            }
+            
+            .poster-image {
+                width: 280px;
+                height: 350px;
+            }
+            
+            .extra-info-container {
+                gap: 50px;
+            }
+            
+            .contact-card {
+                padding: 25px 20px;
+            }
+            
+            .contact-number {
+                font-size: 1.3rem;
+            }
+            
+            .artist-name-tag {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+            
+            .artist-card {
+                flex: 0 0 220px;
+            }
+            
+            .artists-track {
+                animation-name: scrollMobileLarge;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            .host-circle {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .host-name {
+                font-size: 1.5rem;
+            }
+            
+            .host-title {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .artist-card {
+                flex: 0 0 180px;
+            }
+            
+            .artist-image {
+                height: 180px;
+            }
+            
+            .artist-name {
+                font-size: 1.1rem;
+            }
+            
+            .artist-names-container {
+                gap: 8px;
+            }
+            
+            .artist-name-tag {
+                flex: 0 0 calc(50% - 8px);
+                padding: 8px 10px;
+                font-size: 0.85rem;
+                text-align: center;
+            }
+            
+            .poster-image {
+                width: 250px;
+                height: 312px;
+            }
+            
+            .poster-frame {
+                padding: 15px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+            
+            .faq-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .timeline-content {
+                padding: 25px;
+            }
+            
+            .timeline-dot {
+                width: 25px;
+                height: 25px;
+                left: -37px !important;
+            }
+            
+            .map-overlay h3 {
+                font-size: 1.4rem;
+            }
+            
+            .map-info {
+                font-size: 0.9rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-brand {
+                grid-column: 1;
+            }
+            
+            .footer-links {
+                margin-bottom: 20px;
+            }
+            
+            .social-links a {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .artists-track {
+                animation-name: scrollMobile;
+            }
+        }
+
+        /* Very Small Mobile */
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .poster-image {
+                width: 200px;
+                height: 250px;
+            }
+            
+            .artist-card {
+                flex: 0 0 160px;
+            }
+            
+            .artist-image {
+                height: 160px;
+            }
+            
+            .contact-card {
+                padding: 20px 15px;
+            }
+            
+            .contact-number {
+                font-size: 1.2rem;
+            }
+            
+            .host-circle {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .host-profile {
+                padding: 25px;
+            }
+            
+            .artists-track {
+                animation-name: scrollMobileSmall;
+            }
+        }
+
+        /* Landscape Orientation */
+        @media (max-height: 700px) and (orientation: landscape) {
+            .hero {
+                min-height: 120vh;
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                margin: 2rem auto;
+            }
+        }
+
+        /* High Resolution Screens */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+            }
+            
+            .navbar {
+                padding: 20px 7%;
+            }
+            
+            .hero-content,
+            .content-section,
+            .artists-section,
+            .timeline-section,
+            .map-section,
+            .faq-section,
+            .tickets-section,
+            .extra-info-section,
+            .contacts-section,
+            .host-section {
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">SUMMERFEST<span>2025</span></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#artists">Lineup</a>
+            <a href="#timeline">Schedule</a>
+            <a href="#location">Location</a>
+            <a href="#contacts">Contacts</a>
+            <a href="#faq">FAQ</a>
+            <a href="#tickets">Tickets</a>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>SUMMERFEST<br><span>2025</span></h1>
+            <div class="hero-subtitle">DECEMBER 16 • PHAKE, MPUMALANGA</div>
+            
+            <!-- Single stat for artists count -->
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">TOP ARTISTS</span>
+                </div>
+            </div>
+            
+            <p>
+                Daytime Family fun day • Evening festival • Swimming pool access • Gourmet food • One unforgettable day
+            </p>
+            <a href="#tickets" class="cta-button">
+                <i class="fas fa-ticket-alt"></i> GET TICKETS NOW
+            </a>
+        </div>
+    </section>
+
+    <!-- Host Section -->
+    <section class="host-section" id="host">
+        <div class="host-container">
+            <h2 class="section-title" style="margin-bottom: 3rem;">MEET YOUR <span>HOST</span></h2>
+            <div class="host-profile">
+                <div class="host-circle">
+                    <!-- Local image for host -->
+                    <img src="images/host/rebecca-host.jpg" alt="Rebecca - Festival Host" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1494790108755-2616b786d4d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                </div>
+                <div class="host-info">
+                    <div class="host-name">REBECCA</div>
+                    <div class="host-title">FESTIVAL HOST</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artists Carousel -->
+    <section class="artists-section" id="artists">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">FESTIVAL <span>LINEUP</span></h2>
+        <div class="carousel-container">
+            <div class="artists-track" id="artistsTrack">
+                <!-- Generated by JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Artist Names List Under the Slide -->
+        <div class="artist-names-list">
+            <h3 style="font-size: 1.5rem; color: var(--black); margin-bottom: 20px;">ALL ARTISTS AT A GLANCE</h3>
+            <div class="artist-names-container" id="artistNames">
+                <!-- Generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section class="contacts-section" id="contacts">
+        <h2 class="section-title" style="margin-bottom: 3rem;">CONTACT <span>NUMBERS</span></h2>
+        <div class="contacts-container">
+            <div class="contacts-grid">
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone-alt"></i> All Liquors</h3>
+                    <div class="contact-number">084 324 6293</div>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone-alt"></i> More'K</h3>
+                    <div class="contact-number">081 284 0122</div>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone-alt"></i> Thato</h3>
+                    <div class="contact-number">081 585 7960</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with Image -->
+    <section class="content-section" id="about">
+        <div class="content-wrapper">
+            <div class="section-image">
+                <!-- Local image for festival atmosphere -->
+                <img src="images/sections/festival-atmosphere.jpg" alt="Summerfest Festival Atmosphere" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">SUMMER <span>FESTIVAL</span></h2>
+                <p class="section-text">
+                    Summerfest 2025 brings together the best of relaxation and festival excitement. 
+                    Experience a full day of entertainment, from family-friendly activities during the day 
+                    to an epic festival under the stars at night.
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-music"></i>top artists </li>
+                    <li><i class="fas fa-child"></i> Kids activities & family zone</li>
+                    <li><i class="fas fa-utensils"></i> Gourmet food vendors</li>
+                    <li><i class="fas fa-cocktail"></i> Cocktail bars & premium drinks</li>
+                    <li><i class="fas fa-star"></i> Professional light shows</li>
+                    <li><i class="fas fa-drum"></i> Live music performances</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swimming Pool Section -->
+    <section class="content-section" style="background: var(--white);">
+        <div class="content-wrapper reverse">
+            <div class="section-image">
+                <!-- Local image for swimming pool -->
+                <img src="images/sections/swimming-pool.jpg" alt="Summerfest Swimming Pool" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">POOLSIDE <span>EXPERIENCE</span></h2>
+                <p class="section-text">
+                    Our massive festival swimming pool transforms throughout the day. 
+                    Family-friendly in the morning with shallow areas for kids, then 
+                    evolves into a vibrant pool party as the sun sets.
+                </p>
+                <ul class="features-list">
+                    <li><i class="fas fa-sun"></i> Daytime: Family swim sessions (9AM-6PM)</li>
+                    <li><i class="fas fa-moon"></i> Evening: 18+ pool party (6PM-drop)</li>
+                    <li><i class="fas fa-cocktail"></i> Poolside cocktail service</li>
+                    <li><i class="fas fa-swimmer"></i> Dedicated DJ booth</li>
+                    <li><i class="fas fa-umbrella-beach"></i> Luxury lounge chairs</li>
+                    <li><i class="fas fa-life-ring"></i> lifeguards on duty</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section" id="timeline">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 5rem;">DAY <span>SCHEDULE</span></h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-time">
+                        <i class="fas fa-sun"></i> 8:30 AM
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black);">Gates Open</h3>
+                    <p style="color: var(--gray);">Welcome! Early entry begins. Parking opens, venue exploration starts.</p>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-time">
+                        <i class="fas fa-swimmer"></i> 9:00 AM
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black);">Pool Opens</h3>
+                    <p style="color: var(--gray);">Swimming pool opens for families. Kids activities begin around the pool area.</p>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-time">
+                        <i class="fas fa-music"></i> 11:00 AM
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black);">Daytime DJs</h3>
+                    <p style="color: var(--gray);">First artists take the stage. DJ starts playing chilled sets.</p>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-time">
+                        <i class="fas fa-utensils"></i> 1:00 PM
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black);">Lunch Service</h3>
+                    <p style="color: var(--gray);">All food vendors fully operational alld day long. </p>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-time">
+                        <i class="fas fa-clock"></i> 5:00 PM
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black);">Day Event Ends</h3>
+                    <p style="color: var(--gray);">Family Fun day concludes. </p>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-time">
+                        <i class="fas fa-moon"></i> 6:00 PM
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black);">Night Festival</h3>
+                    <p style="color: var(--gray);">18+ entry begins. Main stage lights activate. Bars fully stocked.</p>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-time">
+                        <i class="fas fa-star"></i> 8:00 PM
+                    </div>
+                    <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: var(--black);">Headliners</h3>
+                    <p style="color: var(--gray);">Top artists perform. Festival shows begin. Pool party transitions to night mode.</p>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="location">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">VENUE <span>LOCATION</span></h2>
+        <div class="map-container">
+            <div class="map-wrapper">
+                <!-- Google Maps Embed -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.234167210677!2d30.80224111503152!3d-26.22657168342288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e5a8f5b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sPhake%2C%20Mpumalanga%2C   South%20Africa!5e0!3m2!1sen!2sza!4v1633080000000!5m2!1sen!2sza" 
+                    class="map-frame"
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="map-overlay">
+                    <h3>Elephant Resort, Phake</h3>
+                    <div class="map-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mpumalanga Province, South Africa</span>
+                    </div>
+                    <div class="map-info">
+                        <i class="fas fa-car"></i>
+                        <span> parking: R50 per vehicle</span>
+                    </div>
+                    <div class="map-info">
+                        <i class="fas fa-bus"></i>
+                        <span>Taxis will be available at night</span>
+                    </div>
+                    <div class="map-info">
+                        <i class="fas fa-clock"></i>
+                        <span>Gates: 8:30AM </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section with Image -->
+    <section class="content-section">
+        <div class="content-wrapper">
+            <div class="section-image">
+                <!-- Local image for food & drinks -->
+                <img src="images/sections/food-drinks.jpg" alt="Summerfest Food & Drinks" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';">
+            </div>
+            <div class="section-content">
+                <h2 class="section-title">FOOD & <span>DRINKS</span></h2>
+                <p class="section-text">
+                    From family-friendly food trucks during the day to gourmet vendors 
+                    and cocktail bars at night. food stall will be available , we got you. 
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 2rem;">
+                    <div style="text-align: center; padding: 20px; background: var(--light-gray); border-radius: 15px;">
+                        <i class="fas fa-ice-cream" style="font-size: 2rem; color: var(--yellow); margin-bottom: 10px;"></i>
+                        <p style="color: var(--black); font-weight: 600;">Ice Cream</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: var(--light-gray); border-radius: 15px;">
+                        <i class="fas fa-cocktail" style="font-size: 2rem; color: var(--yellow); margin-bottom: 10px;"></i>
+                        <p style="color: var(--black); font-weight: 600;">Drinks</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: var(--light-gray); border-radius: 15px;">
+                        <i class="fas fa-hamburger" style="font-size: 2rem; color: var(--yellow); margin-bottom: 10px;"></i>
+                        <p style="color: var(--black); font-weight: 600;">Food</p>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: var(--light-gray); border-radius: 15px;">
+                        <i class="fas fa-coffee" style="font-size: 2rem; color: var(--yellow); margin-bottom: 10px;"></i>
+                        <p style="color: var(--black); font-weight: 600;">Coffee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">FREQUENTLY <span>ASKED QUESTIONS</span></h2>
+        <div class="faq-container">
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>
+                            <span class="faq-icon"><i class="fas fa-child"></i></span>
+                            Can kids attend both day and night events?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kids are welcome for the daytime family event (9AM-3PM) which is free for children under 12. The evening festival (6PM-till we drop) is strictly 18+ only. Kids must be accompanied by a parent or guardian at all times during the day event.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>
+                            <span class="faq-icon"><i class="fas fa-swimming-pool"></i></span>
+                            What are the swimming pool rules?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Swimming pool opens at 9am. Daytime (9AM-5PM) is family-friendly with shallow kids area and lifeguards. Evening (6PM-12AM) is 18+ pool party. Bring your own towels. No glass containers near the pool. Lifeguards on duty at all times.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>
+                            <span class="faq-icon"><i class="fas fa-car"></i></span>
+                            Is there parking and transportation?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Secure parking available on-site for R50 per vehicle. VIP parking R150 (limited spaces). Shuttle buses run from Nelspruit (R80 return) and Middelburg (R100 return). Book shuttles in advance via our website.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>
+                            <span class="faq-icon"><i class="fas fa-utensils"></i></span>
+                            What food and drinks are available?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Daytime: Family food court with burgers, pizza, ice cream, and kid-friendly options. Evening: Gourmet food trucks, vegetarian/vean options, cocktail bars, craft beer garden. No outside food or drinks allowed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>
+                            <span class="faq-icon"><i class="fas fa-ticket-alt"></i></span>
+                            Are tickets refundable?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tickets are non-refundable but transferable. You can transfer your ticket to someone else up to 48 hours before the event through Computicket. Event happens rain or shine.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>
+                            <span class="faq-icon"><i class="fas fa-medkit"></i></span>
+                            What safety measures are in place?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Medical tents with trained staff, security personnel throughout venue, well-lit areas, free water stations, designated safe zones, visible security and medical contact points.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>
+                            <span class="faq-icon"><i class="fas fa-rain"></i></span>
+                            What if it rains on the day?
+                        </h3>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The festival happens rain or shine! We have covered areas for both events. Check our social media for weather updates and bring appropriate clothing. No refunds due to weather.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tickets Section -->
+    <section class="tickets-section" id="tickets">
+        <div class="tickets-content">
+            <h2 class="section-title" style="color: var(--black);">GET YOUR <span style="color: var(--black);">TICKETS</span></h2>
+            <p class="section-text" style="color: var(--black); max-width: 700px; margin: 0 auto 3rem; opacity: 0.9;">
+             tickets available for Summerfest 2025. Choose from General Admission, VIP, or Early Bird options.
+                All tickets sold through our official partner Computicket.
+            </p>
+            <a href="https://www.computicket.com/" target="_blank" style="display: inline-flex; align-items: center; gap: 15px; background: var(--black); color: var(--yellow); padding: 20px 50px; font-size: 1.2rem; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s ease; box-shadow: 0 15px 40px rgba(0,0,0,0.2);">
+                <i class="fas fa-ticket-alt"></i> BUY TICKETS ON COMPUTICKET
+            </a>
+        </div>
+    </section>
+
+    <!-- Announcement & Poster Section (After Tickets) -->
+    <section class="extra-info-section">
+        <div class="extra-info-container">
+            <div class="announcement-board">
+                <h2><i class="fas fa-bullhorn"></i> ANNOUNCEMENTS</h2>
+                <div class="announcement-content">
+                    <p>Currently no announcements. Check back soon for updates!</p>
+                </div>
+            </div>
+            
+            <div class="poster-container">
+                <h2 class="section-title" style="margin-bottom: 2rem; font-size: 2.5rem;">EVENT <span>POSTER</span></h2>
+                <div class="poster-frame">
+                    <div class="poster-image">
+                        <!-- Local event poster -->
+                        <img src="images/poster/event-poster.jpg" alt="Summerfest 2025 Event Poster" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>SUMMERFEST 2025</h3>
+                <p>
+                    Beach • Music • Celebration<br>
+                    November 16 • Phake, Mpumalanga
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>QUICK LINKS</h4>
+                <a href="#about">About</a>
+                <a href="#artists">Lineup</a>
+                <a href="#timeline">Schedule</a>
+                <a href="#location">Location</a>
+                <a href="#contacts">Contacts</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-links">
+                <h4>CONTACT</h4>
+                <a href="mailto:info@summerfest.co.za">info@summerfest.co.za</a>
+                <a href="tel:+27112345678">+27 11 234 5678</a>
+                <a href="#contacts">Contact Numbers</a>
+            </div>
+            <div class="footer-links">
+                <h4>LEGAL</h4>
+                <a href="#tickets">Tickets</a>
+                
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Summerfest. All rights reserved. | Official ticketing partner: Computicket</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Phake Elephant Resort, Mpumalanga, South Africa</p>
+        </div>
+    </footer>
+
+    <script>
+        // Artists Data with image paths
+        const artists = [
+            { name: "Shebeshxt", image: "images/artists/shebeshxt.jpg" },
+            { name: "Babalwa M", image: "images/artists/babalwa-m.jpg" },
+            { name: "25K", image: "images/artists/25k.jpg" },
+            { name: "TmanXpress", image: "images/artists/tmanxpress.jpg" },
+            { name: "Lepaka", image: "images/artists/lepaka.jpg" },
+            { name: "Thathohatsi & Tracy", image: "images/artists/thathohatsi-tracy.jpg" },
+            { name: "Janisto", image: "images/artists/janisto.jpg" },
+            { name: "Big Baller CEO", image: "images/artists/big-baller-ceo.jpg" },
+            { name: "Sia The Bee", image: "images/artists/sia-the-bee.jpg" },
+            { name: "Space Andza", image: "images/artists/space-andza.jpg" },
+            { name: "DJ Pentse", image: "images/artists/dj-pentse.jpg" },
+            { name: "IG Pamla", image: "images/artists/ig-pamla.jpg" },
+            { name: "Space Jay", image: "images/artists/space-jay.jpg" },
+            { name: "K-Wizzy", image: "images/artists/k-wizzy.jpg" },
+            { name: "More K", image: "images/artists/more-k.jpg" },
+            { name: "Silly K", image: "images/artists/silly-k.jpg" },
+            { name: "Touch Mo", image: "images/artists/touch-mo.jpg" },
+            { name: "Mr Dee", image: "images/artists/mr-dee.jpg" },
+            { name: "Mack", image: "images/artists/mack.jpg" },
+            { name: "Untold SA", image: "images/artists/untold-sa.jpg" },
+            { name: "Dree De Percussionist", image: "images/artists/dree-de-percussionist.jpg" },
+            { name: "Diva (MC)", image: "images/artists/diva-mc.jpg" },
+            { name: "Mighty Nyiko (MC)", image: "images/artists/mighty-nyiko-mc.jpg" },
+            { name: "Dube (MC)", image: "images/artists/dube-mc.jpg" }
+        ];
+
+        // Generate artist carousel
+        function generateArtists() {
+            const track = document.getElementById('artistsTrack');
+            const namesContainer = document.getElementById('artistNames');
+            
+            // Create two full sets of all artists for infinite scroll
+            for (let set = 0; set < 2; set++) {
+                artists.forEach(artist => {
+                    const card = document.createElement('div');
+                    card.className = 'artist-card';
+                    
+                    card.innerHTML = `
+                        <div class="artist-image">
+                            <img src="${artist.image}" alt="${artist.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';">
+                        </div>
+                        <div class="artist-info">
+                            <div class="artist-name">${artist.name}</div>
+                        </div>
+                    `;
+                    
+                    track.appendChild(card);
+                });
+            }
+            
+            // Generate artist names list
+            artists.forEach(artist => {
+                const nameTag = document.createElement('div');
+                nameTag.className = 'artist-name-tag';
+                nameTag.textContent = artist.name;
+                namesContainer.appendChild(nameTag);
+            });
+        }
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const body = document.body;
+            
+            navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                body.style.overflow = 'hidden';
+            } else {
+                body.style.overflow = 'auto';
+            }
+        }
+
+        // FAQ toggle
+        function toggleFAQ(element) {
+            const faqItem = element.closest('.faq-item');
+            const answer = faqItem.querySelector('.faq-answer');
+            const arrow = faqItem.querySelector('.faq-arrow');
+            
+            // Close other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-question').classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            element.classList.toggle('active');
+            
+            // Update arrow
+            if (answer.classList.contains('active')) {
+                arrow.style.transform = 'rotate(180deg)';
+                arrow.style.color = '#FFD500';
+            } else {
+                arrow.style.transform = 'rotate(0deg)';
+                arrow.style.color = '#2A2A2A';
+            }
+        }
+
+        // Timeline animation on scroll
+        function animateTimeline() {
+            const items = document.querySelectorAll('.timeline-item');
+            items.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight - 100) {
+                    setTimeout(() => {
+                        item.style.animation = `fadeInUp 0.6s ease forwards ${index * 0.1}s`;
+                    }, 300);
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            generateArtists();
+            animateTimeline();
+            
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close mobile menu if open
+                        const navLinks = document.getElementById('navLinks');
+                        const body = document.body;
+                        
+                        if (navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            body.style.overflow = 'auto';
+                        }
+                    }
+                });
+            });
+            
+            // Close mobile menu when clicking outside (for small screens only)
+            document.addEventListener('click', function(event) {
+                const navLinks = document.getElementById('navLinks');
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                
+                if (window.innerWidth <= 768 && 
+                    !navLinks.contains(event.target) && 
+                    !menuBtn.contains(event.target) && 
+                    navLinks.classList.contains('active')) {
+                    
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Scroll event listeners
+            window.addEventListener('scroll', animateTimeline);
+            
+            // Open first FAQ by default
+            const firstFAQ = document.querySelector('.faq-item');
+            if (firstFAQ) {
+                firstFAQ.querySelector('.faq-answer').classList.add('active');
+                firstFAQ.querySelector('.faq-question').classList.add('active');
+                firstFAQ.querySelector('.faq-arrow').style.transform = 'rotate(180deg)';
+                firstFAQ.querySelector('.faq-arrow').style.color = '#FFD500';
+            }
+        });
+    </script>
+</body>
+</html>
